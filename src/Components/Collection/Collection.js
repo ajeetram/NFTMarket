@@ -1,46 +1,40 @@
 import React,{useState} from 'react'
 import './collection.css'
 import { BsFillAlarmFill, BsFillCalendarDateFill, BsCalendar3 } from 'react-icons/bs';
+import DaysComponent from './DaysComponent/DaysComponent';
 
 const Collection = () => {
     const [popular, setPopular] = useState(true);
-    const [following, setFollowing] = useState(true);
-    const [news, setNews] = useState(true);
+    const [following, setFollowing] = useState(false);
+    const [news, setNews] = useState(false);
 
-    const cardArray = [1,2,3,4,5,6,7,8];
+    const CardArray = [1,2,3,4,5,6];
     const followingArray = [1,2,3,4];
     const newsArray = [1,2,3,4,5,6];
 
-    const openPopular=()=>
-    {
-        if(!popular)
-        {
-            setPopular(true);
-            setFollowing(false);
-            setNews(false);
+    const openPopular = () => {
+        if (!popular) {
+          setPopular(true);
+          setFollowing(false);
+          setNews(false);
         }
-       
-    }
-    const openFollower=()=>
-    {
-        if(!following)
-        {
-            setPopular(false);
-            setFollowing(true);
-            setNews(false);
+      };
+    
+      const openFollower = () => {
+        if (!following) {
+          setPopular(false);
+          setFollowing(true);
+          setNews(false);
         }
-       
-    }
-    const openNews=()=>
-    {
-        if(!news)
-        {
-            setPopular(false);
-            setFollowing(false);
-            setNews(true);
+      };
+    
+      const openNews = () => {
+        if (!news) {
+          setPopular(false);
+          setFollowing(false);
+          setNews(true);
         }
-       
-    }
+      };
 
   return (
     <div className='collection'>
@@ -63,9 +57,9 @@ const Collection = () => {
         {
             popular && (<div className='collection_box'>
                 {
-                    cardArray.map((el,i)=>(
+                    CardArray.map((el,i)=>(
                         
-                        <div Key={i+1}>DaysComponent</div>
+                        <DaysComponent Key={i+1} />
                     ))
                 }
             </div>)
@@ -74,7 +68,7 @@ const Collection = () => {
             {following && (<div className='collection_box'>
                 {
                     followingArray.map((el,i)=>(
-                        <div Key={i+1}>DaysComponent</div>
+                        <DaysComponent Key={i+1} />
                     ))
                 }
             </div>)
@@ -84,7 +78,7 @@ const Collection = () => {
                 {
                     newsArray.map((el,i)=>(
                         
-                        <div Key={i+1}>DaysComponent</div>
+                        <DaysComponent Key={i+1} />
                     ))
                 }
             </div>)}

@@ -2,7 +2,7 @@ import React from 'react'
 import BigNFTslider from './Components/BigNFTslider/BigNFTslider'
 
 
-import { Navbar,Footer, HeroSecton, Service, Subscribe, Title, Category, Filter, NFTCard, Collection } from './Components/ComponentsImport'
+import { Navbar,Footer, HeroSecton, Service, Subscribe, Title, Category, Filter, NFTCard, Collection, FollowerTab } from './Components/ComponentsImport'
 
 const App = () => {
   return (
@@ -12,6 +12,10 @@ const App = () => {
   <Service></Service>
   <BigNFTslider></BigNFTslider>
   <Subscribe></Subscribe>
+  <Title 
+  heading="New Collection" 
+  paragraph="Discover the most outstanding NFTs in all topics of its"></Title>
+  <FollowerTab />
   <Collection />
   <Title 
   heading="Featured NFTs" 
